@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :member
+  resources :member, :membership_type
   #get 'member/show' => 'member#show'
   #get 'member/new' => 'member#new'
   #get 'member/create' => 'member#create'

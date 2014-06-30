@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Member - <%= @member.tx_first_name %> <%= @member.tx_last_name %></title>
+  <title>MembershipType - <%= @membership_type.cd_membership_type_code %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Member#show</h1>
-<p>Find me in app/views/member/show.html.erb</p>
+<h1>MembershipType#show</h1>
+<p>Find me in app/views/membership_type/show.html.erb</p>
 
-<p> Member First Name: <%= @member.tx_first_name %> </p>
-<p> Member Last Name: <%= @member.tx_last_name %> </p>
-<p> Member Address: <%= @member.tx_address %> </p>
-<p> Member Hash: <%= @member.hs_member %> </p>
-<p> QR Code: <%= render_qr_code(@member.hs_member) %> </p>
+<p>Membership Type Name: <%= @membership_type.tx_membership_type %> </p>
+<p>Membership Type Code: <%= @membership_type.cd_membership_type_code %> </p>
+<p>Duration (Days): <%= @membership_type.nb_membership_duration %> </p>
+
 </body>
 </html>
 

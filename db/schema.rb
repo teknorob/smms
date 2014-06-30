@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140624113622) do
   add_index "members", ["membership_id"], name: "index_members_on_membership_id"
 
   create_table "membership_types", force: true do |t|
-    t.string   "tx_membership"
+    t.string   "tx_membership_type"
     t.integer  "nb_membership_duration"
     t.string   "cd_membership_type_code"
     t.datetime "created_at"

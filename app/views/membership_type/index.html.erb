@@ -7,19 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Member#index</h1>
-<p>Find me in app/views/member/index.html.erb</p>
-<% if @members.empty? %>
-    <p> No members were found. </p>
+<h1>MemberType#index</h1>
+<p>Find me in app/views/membership_type/index.html.erb</p>
+<% if @membership_types.empty? %>
+    <p> No membership types were found. </p>
 <% else %>
-    <% @members.each do |member| %>
+    <% @membership_types.each do |membership_type| %>
         <br/>
-        <h2>Member # <%= member.id %></h2>
-        <p> Member First Name: <%= member.tx_first_name %> </p>
-        <p> Member Last Name: <%= member.tx_last_name %> </p>
-        <p> Member Address: <%= member.tx_address %> </p>
-        <p> Member Hash: <%= member.hs_member %> </p>
-        <p> QR Code: <%= render_qr_code(member.hs_member) %> </p>
+        <h2>Membership Type Id: #<%= membership_type.id %></h2>
+        <p>Membership Type Name: <%= membership_type.tx_membership_type %> </p>
+        <p>Membership Type Code: <%= membership_type.cd_membership_type_code %> </p>
+        <p>Duration (Days): <%= membership_type.nb_membership_duration %> </p>
     <% end %>
 <% end %>
 </body>
