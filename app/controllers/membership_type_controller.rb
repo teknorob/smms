@@ -27,7 +27,6 @@ class MembershipTypeController < ApplicationController
   def create #Create a new member
     membership_type = MembershipType.new( new_membership_type_params )
     membership_type.save
-
     redirect_to membership_type
   end
 

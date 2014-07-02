@@ -27,8 +27,7 @@ class MemberController < ApplicationController
 
   def create #Create a new member
     member = Member.new(new_member_params)
-    member.save
-    member.update_attribute(:hs_member, Digest::MD5.hexdigest(member.to_s) )
+    member.save_new_member(params[:membership_type])
 
     redirect_to member
   end
@@ -40,6 +39,10 @@ class MemberController < ApplicationController
 
   def get_member_params
     params.require(:id)
+  end
+
+  def get_membership_type_params
+    params.require(:membership_type).permit([:id])
   end
 
   def get_member

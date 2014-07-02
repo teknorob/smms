@@ -18,10 +18,10 @@
     <% if @membership_type_list.length < 1 %>
         No membership types currently available.
     <% else %>
-        <%= options_for_select(@membership_type_list) %>
+        <%= select_tag(:membership_type, options_from_collection_for_select(@membership_type_list, :id, :tx_membership_type )) %>
     <% end %>
     <br/>
-<input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 <% end %>
 </body>
 </html>

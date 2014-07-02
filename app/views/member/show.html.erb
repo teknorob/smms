@@ -14,6 +14,8 @@
 <p> Member Last Name: <%= @member.tx_last_name %> </p>
 <p> Member Address: <%= @member.tx_address %> </p>
 <p> Member Hash: <%= @member.hs_member %> </p>
+<p> Membership Type: <%= @member.membership.membership_type.tx_membership_type %></p>
+<p> Membership Expires: <%= @member.membership.dt_expiration_date %></p>
 <p> QR Code: <%= render_qr_code(@member.hs_member) %> </p>
 </body>
 </html>

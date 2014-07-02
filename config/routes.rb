@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'membership/create'
+
+  get 'membership/destroy'
+
   resources :member, :membership_type
   #get 'member/show' => 'member#show'
   #get 'member/new' => 'member#new'
