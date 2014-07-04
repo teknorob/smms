@@ -17,6 +17,9 @@
 <p> Membership Type: <%= @member.membership.membership_type.tx_membership_type %></p>
 <p> Membership Expires: <%= @member.membership.dt_expiration_date %></p>
 <p> QR Code: <%= render_qr_code(@member.hs_member) %> </p>
+
+<%= button_to 'Edit', edit_member_path(@member), :method => :get %>
+<%= button_to "Back to Member List", member_index_path, :method => :get%>
 </body>
 </html>
 

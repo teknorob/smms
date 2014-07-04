@@ -13,7 +13,8 @@
 <p>Membership Type Name: <%= @membership_type.tx_membership_type %> </p>
 <p>Membership Type Code: <%= @membership_type.cd_membership_type_code %> </p>
 <p>Duration (Days): <%= @membership_type.nb_membership_duration %> </p>
-
+<br/>
+<%= button_to "Back to Membership Type List", membership_type_index_path, :method => :get%>
 </body>
 </html>
 

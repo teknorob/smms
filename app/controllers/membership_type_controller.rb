@@ -1,5 +1,5 @@
 class MembershipTypeController < ApplicationController
-  before_action :get_membership_type, only: [:show, :edit, :destroy ]
+  before_action :get_membership_type, only: [:show, :edit, :destroy, :update ]
 
   def show #Show a single member
 
@@ -10,7 +10,8 @@ class MembershipTypeController < ApplicationController
   end
 
   def update #Update a single member
-
+    MembershipType.update(@membership_type, update_membership_type_params)
+    redirect_to :action => "index"
   end
 
   def destroy #Destroy a member
@@ -32,6 +33,10 @@ class MembershipTypeController < ApplicationController
 
   private
   def new_membership_type_params
+    params.require(:membership_type).permit([:id,:cd_membership_type_code,:nb_membership_duration,:tx_membership_type])
+  end
+
+  def update_membership_type_params
     params.require(:membership_type).permit([:id,:cd_membership_type_code,:nb_membership_duration,:tx_membership_type])
   end
 

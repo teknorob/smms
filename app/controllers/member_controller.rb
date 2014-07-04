@@ -1,5 +1,5 @@
 class MemberController < ApplicationController
-  before_action :get_member, only: [:show, :edit, :destroy ]
+  before_action :get_member, only: [:show, :edit, :destroy, :update ]
 
   def show #Show a single member
 
@@ -10,7 +10,8 @@ class MemberController < ApplicationController
   end
 
   def update #Update a single member
-
+    Member.update(@member, update_member_params)
+    redirect_to @member
   end
 
   def destroy #Destroy a member
@@ -34,6 +35,10 @@ class MemberController < ApplicationController
 
   private
   def new_member_params
+    params.require(:member).permit([:id, :tx_first_name, :tx_last_name, :tx_address])
+  end
+
+  def update_member_params
     params.require(:member).permit([:id, :tx_first_name, :tx_last_name, :tx_address])
   end
 

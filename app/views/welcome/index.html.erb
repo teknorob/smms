@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SMMS</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>Welcome to SMMS (Simple Member Management Software)</h1>
+<p>Select an action from below</p>
+<%= button_to 'View All Members', member_index_path, :method => :get %>
+<%= button_to 'View All Membership Types', membership_type_index_path, :method => :get %>
+
+</body>
