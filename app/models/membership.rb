@@ -5,28 +5,33 @@ class Membership < ActiveRecord::Base
   def save_new_membership
     self.membership_type != nil?
     begin
-      self.dt_expiration_date= Date.today + self.membership_type.nb_membership_duration
+      self.dt_expiration_date = Date.today + self.membership_type.nb_membership_duration
     end
     self.save
   end
 
+  <<-DOC
+  == To be refactored==
   def update_membership membership_type
-    membership_type != nil?
-    begin
-      self.membership_type = membership_type;
+    if membership_type != nil
+      self.membership_type = membership_type
       #Check if the current membership exists and hasn't expired
-      self.dt_expiration_date == nil || self.dt_expiration_date < Date.today?
-      begin
-        self.dt_expiration_date= self.dt_expiration_date + membership_type.nb_membership_duration
-        flash[:alert] = "Membership reactivated, new expiration is " + self.dt_expiration_date
-      end
+      if self.dt_expiration_date == nil
+        self.dt_expiration_date = Date.today + membership_type.nb_membership_duration
       else
-      begin
         old_date = self.dt_expiration_date
-        self.dt_expiration_date= self.dt_expiration_date + membership_type.nb_membership_duration
-        flash[:alert] = "Membership expiration extended from " + old_date + " to " + self.dt_expiration_date
+        self.dt_expiration_date= old_date + membership_type.nb_membership_duration
       end
+      self.save
     end
-    self.save
+  end
+  =end
+  DOC
+
+  def update_membership membership_type
+      self.membership_type = membership_type
+      old_date = self.dt_expiration_date
+      self.dt_expiration_date = old_date + membership_type.nb_membership_duration
+      self.save
   end
 end

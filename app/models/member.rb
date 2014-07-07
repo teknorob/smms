@@ -17,6 +17,9 @@ class Member < ActiveRecord::Base
   def update_member_membership membership_type_id = nil
     membership_type_id != nil?
     begin
+      if self.membership == nil?
+        self.membership = Membership.new
+      end
       self.membership.update_membership(MembershipType.find(membership_type_id))
     end
     self.save

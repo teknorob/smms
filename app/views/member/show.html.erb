@@ -15,11 +15,11 @@
 <p> Member Address: <%= @member.tx_address %> </p>
 <p> Member Hash: <%= @member.hs_member %> </p>
 <p> Membership Type: <%= @member.membership.membership_type.tx_membership_type %></p>
-<p> Membership Expires: <%= @member.membership.dt_expiration_date %></p>
+<p> Membership Expires: <%= @member.membership.dt_expiration_date.strftime("%m/%d/%Y") %></p>
 <p> QR Code: <%= render_qr_code(@member.hs_member) %> </p>
 
 <%= button_to "Edit", edit_member_path(@member), :method => :get %>
-<%= button_to "Update Membership", edit_membership_path({:controller => "membership", :action => "edit", :member => Array.new{@member.id} } ), :method => :get %>
+<%= button_to "Update Membership", member_edit_membership_path( :id => @member ), :method => :get %>
 <%= button_to "Back to Member List", member_index_path, :method => :get%>
 </body>
 </html>

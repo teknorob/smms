@@ -1,5 +1,5 @@
 class MemberController < ApplicationController
-  before_action :get_member, only: [:show, :edit, :destroy, :update ]
+  before_action :get_member, only: [:show, :edit, :destroy, :update, :edit_membership, :update_membership ]
 
   def show #Show a single member
 
@@ -11,6 +11,15 @@ class MemberController < ApplicationController
 
   def update #Update a single member
     member = Member.update(@member, update_member_params)
+    redirect_to @member
+  end
+
+  def edit_membership
+    @membership_types = MembershipType.all
+  end
+
+  def update_membership
+    @member.update_member_membership(get_membership_type_params)
     redirect_to @member
   end
 
@@ -47,7 +56,7 @@ class MemberController < ApplicationController
   end
 
   def get_membership_type_params
-    params.require(:membership_type).permit([:id])
+    params.require(:membership_type)
   end
 
   def get_member

@@ -1,17 +1,6 @@
 Rails.application.routes.draw do
-  get 'membership/new'
-
-  get 'membership/create'
-
-  get 'membership/update'
-
-  get 'membership/edit'
-
-  get 'membership/destroy'
-
-  get 'membership/index'
-
-  get 'membership/show'
+  get 'member/edit_membership/:id' => 'member#edit_membership', :as => 'member_edit_membership'
+  get 'member/update_membership/:id' => 'member#update_membership', :as => 'member_update_membership'
 
   devise_for :users
   get 'welcome/index'
