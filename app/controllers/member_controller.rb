@@ -10,12 +10,12 @@ class MemberController < ApplicationController
   end
 
   def update #Update a single member
-    Member.update(@member, update_member_params)
+    member = Member.update(@member, update_member_params)
     redirect_to @member
   end
 
   def destroy #Destroy a member
-
+    @member.destroy
   end
 
   def index #List all members

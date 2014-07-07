@@ -1,10 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'welcome/index'
+  get 'membership/new'
+
   get 'membership/create'
+
+  get 'membership/update'
+
+  get 'membership/edit'
+
   get 'membership/destroy'
 
-  resources :member, :membership_type
+  get 'membership/index'
+
+  get 'membership/show'
+
+  devise_for :users
+  get 'welcome/index'
+
+  resources :member, :membership, :membership_type
   #get 'member/show' => 'member#show'
   #get 'member/new' => 'member#new'
   #get 'member/create' => 'member#create'

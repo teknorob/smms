@@ -13,6 +13,9 @@
 <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+<% if @smms_message %>
+    <p>SMMS: <%= @smms_message %></p>
+<% end %>
 <%= yield %>
 
 </body>

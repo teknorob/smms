@@ -13,4 +13,12 @@ class Member < ActiveRecord::Base
     self.hs_member = Digest::MD5.hexdigest (self.to_s)
     self.save
   end
+
+  def update_member_membership membership_type_id = nil
+    membership_type_id != nil?
+    begin
+      self.membership.update_membership(MembershipType.find(membership_type_id))
+    end
+    self.save
+  end
 end
