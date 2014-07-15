@@ -1,38 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>All Members></title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-    <body>
-        <h1>MemberType#index</h1>
-        <p>Find me in app/views/membership_type/index.html.erb</p>
+<h1>Membership Types</h1>
 
-        <% if @membership_types.empty? %>
-            <p> No membership types were found. </p>
-        <% else %>
-        <table class="member_table">
-          <tr>
-            <td>ID</td>
-            <td>Membership Type Name</td>
-            <td>Membership Type Code</td>
-            <td>Duration (Days)</td>
-          </tr>
+<% if @membership_types.empty? %>
+    <p> No membership types were found. </p>
+<% else %>
+    <table class="member_table">
+    <tr>
+        <td>ID</td>
+        <td>Membership Type Name</td>
+        <td>Membership Type Code</td>
+        <td>Duration (Days)</td>
+    </tr>
 
-          <% @membership_types.each do |membership_type| %>
-          <tr>
+    <% @membership_types.each do |membership_type| %>
+        <tr>
             <td><%= link_to '#' + membership_type.id.to_s, edit_membership_type_path(membership_type) %></td>
             <td><%= membership_type.tx_membership_type %> </td>
             <td><%= membership_type.cd_membership_type_code %> </td>
             <td><%= membership_type.nb_membership_duration %> </td>
-          </tr>
-        <% end %>
-      </table>
+        </tr>
     <% end %>
-    <%= button_to 'New Membership Type', new_membership_type_path, :method => :get %>
-    <%= button_to "Main Menu", welcome_index_path, :method => :get%>
-  </body>
-</html>
+    </table>
+<% end %>
+<%= button_to 'New Membership Type', new_membership_type_path, :method => :get %>
 

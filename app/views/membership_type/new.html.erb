@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>New Member</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>MembershipType#new</h1>
-<p>Find me in app/views/membership_type/create.html.erb</p>
+<h1>New Membership Type</h1>
 
 <%= form_tag("/membership_type", method: "post") do %>
   Membership Type Name: <%= text_field(:membership_type,:tx_membership_type ) %> <br/>
@@ -16,6 +6,4 @@
   Duration (Days): <%= number_field(:membership_type,:nb_membership_duration) %> <br/>
   <input type="submit" value="Submit">
 <% end %>
-</body>
-</html>
 

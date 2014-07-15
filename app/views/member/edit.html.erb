@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>New Member</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>Member#edit</h1>
-<p>Find me in app/views/member/create.html.erb</p>
+<h1>Edit Member</h1>
 
 <%= form_for @member do |f| %>
   <p>First name: <%= text_field(:member,:tx_first_name ) %></p><br/>
@@ -24,6 +14,3 @@
     <input type="submit" value="Submit">
 <% end %>
 <%= button_to "Cancel", member_path(@member), :method => :get%>
-</body>
-</html>
-

@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>All Members></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>Member#index</h1>
-<p>Find me in app/views/member/index.html.erb</p>
+<h1>Members</h1>
 <br/>
-<h2>Member List:</h2>
+<h4>Member List:</h4>
 <% if @members.empty? %>
     <p> No members were found. </p>
 <% else %>
@@ -41,7 +31,4 @@
     </table>
 <% end %>
 <%= button_to 'New Member', new_member_path, :method => :get %>
-<%= button_to "Main Menu", welcome_index_path, :method => :get%>
-</body>
-</html>
 

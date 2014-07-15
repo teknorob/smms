@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Member - <%= @member.tx_first_name %> <%= @member.tx_last_name %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>Member#show</h1>
+<h1><%= @member.tx_first_name %> <%= @member.tx_last_name %></h1>
 <p>Find me in app/views/member/show.html.erb</p>
 
 <p> Member First Name: <%= @member.tx_first_name %> </p>
@@ -20,7 +11,3 @@
 
 <%= button_to "Edit", edit_member_path(@member), :method => :get %>
 <%= button_to "Update Membership", member_edit_membership_path( :id => @member ), :method => :get %>
-<%= button_to "Back to Member List", member_index_path, :method => :get%>
-</body>
-</html>
-
