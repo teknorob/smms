@@ -3,8 +3,15 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
+
+#sqlite3 adapter
+if defined?(JRUBY_VERSION)
 # Use jdbcsqlite3 as the database for Active Record
-# gem 'activerecord-jdbcsqlite3-adapter'
+  gem 'activerecord-jdbcsqlite3-adapter'
+else
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,7 +33,7 @@ gem 'sdoc', '~> 0.4.0',                              group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Database
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Use unicorn as the app server
 # gem 'unicorn'

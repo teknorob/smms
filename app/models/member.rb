@@ -15,12 +15,13 @@ class Member < ActiveRecord::Base
   end
 
   def update_member_membership membership_type_id = nil
-    membership_type_id != nil?
-    begin
+    if membership_type_id != nil
       if self.membership == nil?
         self.membership = Membership.new
       end
-      self.membership.update_membership(MembershipType.find(membership_type_id))
+      self.membership.update_membership(membership_type_id)
+    else
+      raise "No membership type id was given"
     end
     self.save
   end
