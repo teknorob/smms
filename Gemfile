@@ -53,6 +53,7 @@ gem 'devise'
 
 gem 'jquery-rails'
 gem 'less-rails-bootstrap'
+gem 'bootstrap-generators', '~> 3.1.1'
 
 group :assets do
   #gem 'less'
