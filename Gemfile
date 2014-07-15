@@ -4,12 +4,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 
-#sqlite3 adapter
 if defined?(JRUBY_VERSION)
-# Use jdbcsqlite3 as the database for Active Record
+  # Use jdbcsqlite3 as the database for Active Record
   gem 'activerecord-jdbcsqlite3-adapter'
+  gem 'therubyrhino'
 else
   gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'therubyracer'
 end
 
 # Use SCSS for stylesheets
@@ -50,7 +51,9 @@ gem 'rqrcode'
 #Authentication framework
 gem 'devise'
 
+gem 'jquery-rails'
+gem 'less-rails-bootstrap'
 
 group :assets do
-  gem 'less'
+  #gem 'less'
 end

@@ -63,8 +63,13 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     json (1.8.1-java)
-    less (2.6.0)
+    less (2.5.1)
       commonjs (~> 0.2.7)
+    less-rails (2.5.0)
+      actionpack (>= 3.1)
+      less (~> 2.5.0)
+    less-rails-bootstrap (3.2.0)
+      less-rails (~> 2.5.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -145,7 +150,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  less
+  less-rails-bootstrap
   rails (= 4.1.1)
   rqrcode
   sass-rails (~> 4.0.3)
