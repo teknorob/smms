@@ -4,7 +4,6 @@ class CreateMembershipTypes < ActiveRecord::Migration
       t.string :tx_membership_type
       t.integer :nb_membership_duration
       t.string :cd_membership_type_code
-
       t.timestamps
     end
   end

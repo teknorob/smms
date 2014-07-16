@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704105034) do
+ActiveRecord::Schema.define(version: 20140716114545) do
 
   create_table "members", force: true do |t|
     t.string   "tx_address"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20140704105034) do
     t.string   "cd_membership_type_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "cost"
+    t.decimal  "am_cost"
   end
 
   create_table "memberships", force: true do |t|

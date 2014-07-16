@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails rubyminetest: development" uuid="5ca66773-773e-46ea-aef8-5d4d7db4fd3d">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Development\rubyminetest\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Development\smms\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails rubyminetest: test" uuid="e785d26e-0bfc-4b59-aba4-828e30639aef">

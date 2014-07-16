@@ -14,7 +14,7 @@
     <% if @membership_types.length < 1 %>
         No membership types currently available.
     <% else %>
-        <%= select_tag(:membership_type, options_from_collection_for_select(@membership_types, :id, :tx_membership_type )) %>
+        <%= select_tag(:membership_type, options_from_collection_for_select(@membership_types, :id, :tx_membership_type ),:onchange => 'updateMembershipTypeCost()') %>
     <% end %>
 
   <input type="submit" value="Add this membership to member">
