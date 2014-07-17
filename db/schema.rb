@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140716114545) do
     t.string   "cd_membership_type_code"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "cost"
     t.decimal  "am_cost"
   end
 
