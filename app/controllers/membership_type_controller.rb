@@ -33,11 +33,11 @@ class MembershipTypeController < ApplicationController
 
   private
   def new_membership_type_params
-    params.require(:membership_type).permit([:id,:cd_membership_type_code,:nb_membership_duration,:tx_membership_type])
+    params.require(:membership_type).permit([:id,:cd_membership_type_code,:nb_membership_duration,:tx_membership_type,:am_cost])
   end
 
   def update_membership_type_params
-    params.require(:membership_type).permit([:id,:cd_membership_type_code,:nb_membership_duration,:tx_membership_type])
+    params.require(:membership_type).permit([:id,:cd_membership_type_code,:nb_membership_duration,:tx_membership_type,:am_cost])
   end
 
   def get_membership_type_params
