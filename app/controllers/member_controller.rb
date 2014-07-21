@@ -1,5 +1,5 @@
 class MemberController < ApplicationController
-  before_action :get_member, only: [:show, :edit, :destroy, :update, :edit_membership, :update_membership ]
+  before_action :get_member, only: [:show, :edit, :destroy, :update, :edit_membership, :update_membership, :qr_code ]
 
   def show #Show a single member
 
@@ -40,6 +40,9 @@ class MemberController < ApplicationController
     member.save_new_member(params[:membership_type])
 
     redirect_to member
+  end
+
+  def qr_code #View the member's QRCode page
   end
 
   private

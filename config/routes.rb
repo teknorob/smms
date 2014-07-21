@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'member/edit_membership/:id' => 'member#edit_membership', :as => 'member_edit_membership'
   get 'member/update_membership/:id' => 'member#update_membership', :as => 'member_update_membership'
+  get 'member/qr_code/:id' => 'member#qr_code', :as => 'member_qr_code'
 
   devise_for :users
   get 'welcome/index'
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
   root 'welcome#index'
 
   # Example of regular route:

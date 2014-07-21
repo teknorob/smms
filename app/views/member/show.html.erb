@@ -3,10 +3,14 @@
 <p> Member First Name: <%= @member.tx_first_name %> </p>
 <p> Member Last Name: <%= @member.tx_last_name %> </p>
 <p> Member Address: <%= @member.tx_address %> </p>
-<p> Member Hash: <%= @member.hs_member %> </p>
 <p> Membership Type: <%= @member.membership.membership_type.tx_membership_type %></p>
 <p> Membership Expires: <%= @member.membership.dt_expiration_date.strftime("%m/%d/%Y") %></p>
-<p> QR Code: <%= render_qr_code(@member.hs_member) %> </p>
+<p> QR Code (click-to-print):
+  <div id="qr_code_div" onclick='PrintElem( "#qr_code_div")'>
+    <%= render_qr_code_png(@member.hs_member) %>
+  </div>
+</p>
+<p> Member Hash: <%= @member.hs_member %> </p>
 
 <%= button_to "Edit", edit_member_path(@member), :method => :get %>
 <%= button_to "Update Membership", member_edit_membership_path( :id => @member ), :method => :get %>
