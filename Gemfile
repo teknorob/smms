@@ -4,28 +4,19 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 
-<<<<<<< HEAD
-#if defined?(JRUBY_VERSION)
-  # Use jdbcsqlite3 as the database for Active Record
-#  gem 'activerecord-jdbcsqlite3-adapter'
-#  gem 'therubyrhino'
-#else
-  gem 'libv8'
-  gem 'sqlite3' #-ruby', :require => 'sqlite3'
-  gem "therubyracer"
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
-#end
-=======
 if defined?(JRUBY_VERSION)
-  # Use jdbcsqlite3 as the database for Active Record
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'therubyrhino'
+    # Use jdbcsqlite3 as the database for Active Record
+    gem 'activerecord-jdbcsqlite3-adapter'
+    gem 'therubyrhino'
+    gem 'less-rails-bootstrap'
+    gem 'bootstrap-generators', '~> 3.1.1'
 else
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'therubyracer'
+    gem 'libv8'
+    gem 'sqlite3' #-ruby', :require => 'sqlite3'
+    gem "therubyracer"
+    gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+    gem "twitter-bootstrap-rails"
 end
->>>>>>> 704d65d8ba5cf3aa95021c90f695df3cfcb6d97a
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -43,11 +34,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0'#,                              group: :doc
-<<<<<<< HEAD
-=======
-
-gem 'linecache'
->>>>>>> 704d65d8ba5cf3aa95021c90f695df3cfcb6d97a
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -71,15 +57,7 @@ gem 'chunky_png'
 #Authentication framework
 gem 'devise'
 
-<<<<<<< HEAD
-#gem 'less-rails-bootstrap'
-#gem 'bootstrap-generators', '~> 3.1.1'
-=======
-gem 'jquery-rails'
-gem 'less-rails-bootstrap'
-gem 'bootstrap-generators', '~> 3.1.1'
->>>>>>> 704d65d8ba5cf3aa95021c90f695df3cfcb6d97a
 
 group :assets do
-  #gem 'less'
+    #gem 'less'
 end
