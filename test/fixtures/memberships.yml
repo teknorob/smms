@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dt_expiration_date: 2014-06-24 21:34:20
+  membership_type_id: 
+
+two:
+  dt_expiration_date: 2014-06-24 21:34:20
+  membership_type_id: 

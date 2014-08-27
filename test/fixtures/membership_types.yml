@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_membership_type: 1
+  tx_membership: MyString
+  nb_membership_duration: 1
+  cd_membership_type_code: MyString
+
+two:
+  id_membership_type: 1
+  tx_membership: MyString
+  nb_membership_duration: 1
+  cd_membership_type_code: MyString

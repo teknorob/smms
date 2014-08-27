@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tx_address: MyString
+  tx_first_name: MyString
+  tx_last_name: MyString
+  hs_membership: MyString
+  membership_id: 
+
+two:
+  tx_address: MyString
+  tx_first_name: MyString
+  tx_last_name: MyString
+  hs_membership: MyString
+  membership_id: 

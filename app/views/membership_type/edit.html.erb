@@ -1,0 +1,11 @@
+
+<h1>Edit Membership Type</h1>
+
+<%= form_for @membership_type do |f| %>
+  Membership Type Name: <%= text_field(:membership_type,:tx_membership_type ) %> <br/>
+  Membership Type Code: <%= text_field(:membership_type,:cd_membership_type_code) %> <br/>
+  Duration (Days): <%= number_field(:membership_type,:nb_membership_duration) %> <br/>
+    Cost: $<%= number_field(:membership_type,:am_cost) %> <br/>
+
+  <input type="submit" value="Submit">
+<% end %>

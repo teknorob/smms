@@ -1,0 +1,23 @@
+<h1>Update membership</h1>
+
+<%= form_tag(member_update_membership_path, method: "get") do %>
+<h4><%= @member.tx_first_name + ' ' + @member.tx_last_name %> </h4>
+    <p>Current Membership Type:
+    <% if @member.membership != nil? %>
+        <%= @member.membership.membership_type.tx_membership_type %>
+          <b>(Expires <%= @member.membership.dt_expiration_date.strftime("%m/%d/%Y") %>)</b>
+    <% else%>
+        No current membership.
+    <% end %>
+    </p><br/>
+    Membership Type:
+    <% if @membership_types.length < 1 %>
+        No membership types currently available.
+    <% else %>
+        <%= select_tag(:membership_type, options_from_collection_for_select(@membership_types, :id, :tx_membership_type ),:onchange => 'updateMembershipTypeCost()') %>
+    <% end %>
+
+  <input type="submit" value="Add this membership to member">
+<% end %>
+<%= button_to "Back to member", member_path(@member), :method => :get%>
+

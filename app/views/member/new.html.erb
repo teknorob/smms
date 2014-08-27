@@ -1,0 +1,16 @@
+<h1>New Member</h1>
+
+<%= form_tag("/member", method: "post") do %>
+  First name: <%= text_field(:member,:tx_first_name ) %> <br/>
+  Last name: <%= text_field(:member,:tx_last_name) %> <br/>
+  Address: <%= text_field(:member,:tx_address) %> <br/>
+  Membership Type:
+    <% if @membership_type_list.length < 1 %>
+        No membership types currently available.
+    <% else %>
+        <%= select_tag(:membership_type, options_from_collection_for_select(@membership_type_list, :id, :tx_membership_type )) %>
+    <% end %>
+    <br/>
+    <input type="submit" value="Submit">
+<% end %>
+<%= button_to "Back to Member List", member_index_path, :method => :get%>

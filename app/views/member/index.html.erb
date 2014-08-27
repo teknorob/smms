@@ -1,0 +1,32 @@
+<h1>Members</h1>
+<% if @members.empty? %>
+    <p> No members were found. </p>
+<% else %>
+    <br/>
+    <table class="table">
+      <tr>
+        <td>ID</td>
+        <td>Full Name</td>
+        <td>Address</td>
+        <td>Current Membership</td>
+        <td>Expires</td>
+      </tr>
+    <% @members.each do |member| %>
+        <tr>
+            <td><%= link_to '#' + member.id.to_s, member_path(member) %></td>
+            <td><%= member.tx_first_name %> <%= member.tx_last_name %></td>
+            <td><%= member.tx_address %></td>
+            <% if member.membership != nil && member.membership.membership_type != nil? %>
+                <td><%= member.membership.membership_type.tx_membership_type %></td>
+                <td><%= member.membership.dt_expiration_date.strftime("%m/%d/%Y") %></td>
+            <% else %>
+             <td>N/A</td>
+              <td>N/A</td>
+            <% end %>
+        </tr>
+
+    <% end %>
+    </table>
+<% end %>
+<%= button_to 'New Member', new_member_path, :method => :get %>
+

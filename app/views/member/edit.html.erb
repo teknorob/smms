@@ -1,0 +1,16 @@
+<h1>Edit Member</h1>
+
+<%= form_for @member do |f| %>
+  <p>First name: <%= text_field(:member,:tx_first_name ) %></p><br/>
+  <p>Last name: <%= text_field(:member,:tx_last_name) %></p><br/>
+  <p>Address: <%= text_field(:member,:tx_address) %></p><br/>
+  <p>Membership Type:
+    <% if @member.membership == nil %>
+        Not currently a member.
+    <% else %>
+        <%= @member.membership.membership_type.tx_membership_type %>
+    <% end %>
+  </p> <br/>
+    <input type="submit" value="Submit">
+<% end %>
+<%= button_to "Cancel", member_path(@member), :method => :get%>
