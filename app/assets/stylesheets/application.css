@@ -10,8 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+<<<<<<< HEAD
  *
  *= require bootstrap_and_overrides
+=======
+>>>>>>> 704d65d8ba5cf3aa95021c90f695df3cfcb6d97a
  *= require_tree .
  *= require_self
  */
