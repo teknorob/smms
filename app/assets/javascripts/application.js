@@ -36,3 +36,5 @@ function Popup(data)
 
     return true;
 }
+//= require websocket_rails/main
+

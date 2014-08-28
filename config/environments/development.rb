@@ -38,5 +38,6 @@ Rails.application.configure do
   #devise authentication action_mailer
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  config.middleware.delete Rack::Lock
 
 end

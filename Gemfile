@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-
+gem 'websocket-rails'
 if defined?(JRUBY_VERSION)
     # Use jdbcsqlite3 as the database for Active Record
     gem 'activerecord-jdbcsqlite3-adapter'
@@ -13,9 +12,9 @@ if defined?(JRUBY_VERSION)
 else
     gem 'libv8'
     gem 'sqlite3' #-ruby', :require => 'sqlite3'
-    gem "therubyracer"
-    gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-    gem "twitter-bootstrap-rails"
+    gem 'therubyracer'
+    gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+    gem 'twitter-bootstrap-rails'
 end
 
 # Use SCSS for stylesheets
